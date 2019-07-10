@@ -122,6 +122,9 @@ object ScreenshotTaker {
         for (i in 0 until viewGroup.childCount) {
 
             val child = viewGroup.getChildAt(i)
+            if (child.visibility != View.VISIBLE) {
+                break
+            }
 
             val viewArrayList = ArrayList<View>()
             viewArrayList.add(v)
