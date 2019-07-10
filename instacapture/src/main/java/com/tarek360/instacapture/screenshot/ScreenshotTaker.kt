@@ -122,23 +122,22 @@ object ScreenshotTaker {
         for (i in 0 until viewGroup.childCount) {
 
             val child = viewGroup.getChildAt(i)
-            if (child.visibility != View.VISIBLE) {
-                break
+            if (child.visibility == View.VISIBLE) {
+                val viewArrayList = ArrayList<View>()
+                viewArrayList.add(v)
+                viewArrayList.addAll(drawUnDrawableViews(child, canvas))
+
+                if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH && child is TextureView) {
+                    drawTextureView(child, canvas)
+                }
+
+                if (child is GLSurfaceView) {
+                    drawGLSurfaceView(child, canvas)
+                }
+
+                result.addAll(viewArrayList)
             }
 
-            val viewArrayList = ArrayList<View>()
-            viewArrayList.add(v)
-            viewArrayList.addAll(drawUnDrawableViews(child, canvas))
-
-            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH && child is TextureView) {
-                drawTextureView(child, canvas)
-            }
-
-            if (child is GLSurfaceView) {
-                drawGLSurfaceView(child, canvas)
-            }
-
-            result.addAll(viewArrayList)
         }
         return result
     }
