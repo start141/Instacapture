@@ -37,10 +37,10 @@ ext {
     buildToolsVersion = '27.0.3'
 
     // Dependencies versions
-    supportLibraryVersion = '27.1.1'
+    supportLibraryVersion = '1.0.0'
     butterKnifeVersion = '8.8.1'
     picassoVersion = '2.5.2'
-    rxandroidVersion = '1.2.1'
-    rxjavaVersion = '1.1.9'
+    rxandroidVersion = '2.1.1'
+    rxjavaVersion = '2.1.1'
     junitVersion = '4.12'
 }

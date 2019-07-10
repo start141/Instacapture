@@ -5,11 +5,11 @@ import android.graphics.*
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
 import android.os.Build
-import android.support.annotation.RequiresApi
 import android.view.TextureView
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import androidx.annotation.RequiresApi
 import com.tarek360.instacapture.exception.ScreenCapturingFailedException
 import com.tarek360.instacapture.utility.Logger
 import java.nio.IntBuffer
